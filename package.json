@@ -1,0 +1,11 @@
+{
+  "name": "weekend_challange_04",
+  "version": "1.0.0",
+  "description": "Message board for Prime Digitial Academy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "'Sam Moss'",
+  "license": "ISC"
+}
