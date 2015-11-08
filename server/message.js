@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 //Sets up pg and connects to the PGSQL database
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/thunder_chat';
+var connectionString = process.env.DATABASE_URL || 'postgres://ec2-54-83-0-61.compute-1.amazonaws.com/d3enktn9kkarls';
 
 app.use(bodyParser.urlencoded({expanded: true}));
 
