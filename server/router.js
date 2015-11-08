@@ -7,7 +7,6 @@ var router = express.Router();
 var message = require('./message');
 
 
-
 router.use('/message', message);
 
 router.get('/*', function(req,res){

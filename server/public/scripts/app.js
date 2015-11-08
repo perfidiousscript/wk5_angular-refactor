@@ -3,6 +3,7 @@
  */
 
 var message = {};
+var display = [];
 
 $(document).ready(function(){
 
@@ -23,7 +24,18 @@ function postMessage(target) {
         url:'/message/post',
         data:message,
         success: function(data){
-            console.log(data);
+            display.push(data.inputText);
+            refreshMessages();
         }
+    })
+}
+
+function refreshMessages(){
+    $.ajax({
+        type:"GET",
+        url:'/message/refresh',
+        success: function(data){
+                    console.log(data);
+                }
     })
 }
