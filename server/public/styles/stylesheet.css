@@ -8,6 +8,10 @@
     margin: 0 auto;
 }
 
+#inputForm{
+    float: right;
+}
+
 h4 {
     font-size: 75px;
     text-align: center;
