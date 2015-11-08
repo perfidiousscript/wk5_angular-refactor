@@ -33,6 +33,29 @@ app.post('/post', function(req,res){
     });
 });
 
+//This GET call quesrys all messages in the database and sends them back down to the client.
+app.get('/refresh', function(req,res){
 
+    pg.connect(connectionString, function (err, client, done) {
+
+        var refreshMessages = [];
+
+        var messageList = client.query("SELECT * FROM messages");
+
+
+        messageList.on('row', function (row) {
+            refreshMessages.push(row);
+        });
+
+        messageList.on('end', function () {
+            client.end();
+            return res.json(refreshMessages);
+        });
+
+        if (err) {
+            console.log(err);
+        }
+    });
+});
 
 module.exports = app;

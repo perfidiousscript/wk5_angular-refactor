@@ -35,7 +35,10 @@ function refreshMessages(){
         type:"GET",
         url:'/message/refresh',
         success: function(data){
-                    console.log(data);
+                    for(var i = 0; i < data.length; i++){
+                        $('#messages').prepend("<div class='message'><p>USER NAME: " + data[i].user_name + "</p>" +
+                            "<p>MESSAGE: " + data[i].message + "</p>");
+                    }
                 }
-    })
+        })
 }
