@@ -28,7 +28,7 @@ function postMessage(target) {
             refreshMessages();
         }
     });
-    $(target).find(type='text').val();
+    $(target).find("input[type=text]").val("");
 }
 
 function refreshMessages(){
