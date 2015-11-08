@@ -27,10 +27,12 @@ function postMessage(target) {
             display.push(data.inputText);
             refreshMessages();
         }
-    })
+    });
+    $(target).find(type='text').val();
 }
 
 function refreshMessages(){
+    $('#messages').empty();
     $.ajax({
         type:"GET",
         url:'/message/refresh',
