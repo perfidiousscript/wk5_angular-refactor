@@ -10,6 +10,7 @@
   "author": "'Sam Moss'",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "jquery": "^2.1.4",
     "path": "^0.12.7",

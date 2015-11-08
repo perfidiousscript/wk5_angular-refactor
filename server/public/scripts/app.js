@@ -15,9 +15,15 @@ $(document).ready(function(){
 
 
 function postMessage(target) {
-        $.each($(target).serializeArray(), function (i, field) {
-            message[field.name] = field.value;
-            console.log("This is message: ", message);
-        });
-
+    $.each($(target).serializeArray(), function (i, field) {
+        message[field.name] = field.value;
+    });
+    $.ajax({
+        type:"POST",
+        url:'/message/post',
+        data:message,
+        success: function(data){
+            console.log(data);
+        }
+    })
 }

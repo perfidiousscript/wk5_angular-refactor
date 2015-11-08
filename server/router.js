@@ -4,11 +4,16 @@
 var express = require('express');
 var path = require('path');
 var router = express.Router();
+var message = require('./message');
 
-var routes = router.get('/*', function(req,res){
+
+
+router.use('/message', message);
+
+router.get('/*', function(req,res){
     var file = req.params[0] || './views/index.html';
     res.sendFile(path.join(__dirname,'./public',file));
 });
 
 
-module.exports = routes;
+module.exports = router;
