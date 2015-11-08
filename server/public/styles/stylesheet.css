@@ -1,0 +1,19 @@
+*{
+    background-color: black;
+    color: white;
+}
+
+#body-container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+h4 {
+    font-size: 75px;
+    text-align: center;
+}
+
+.messages{
+    border: 5px solid grey;
+    margin: 15px;
+}

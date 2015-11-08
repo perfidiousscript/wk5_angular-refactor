@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Thunder Chat</title>
+    <link rel="stylesheet" href="../styles/stylesheet.css">
     <script type="text/javascript" src="/vendors/jquery.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
+
 <body>
+    <div id="body-container">
+        <h4>Thunder Chats</h4>
+        <div id="inputForm">
+            <form id="messageSubmit">
+                <input type="text" name="inputText">
+                <input type="submit" id="submitButton">
+            </form>
+        </div>
 
-    <h4>Thunder Chats</h4>
-    <div id="inputForm">
-        <form id="messageSubmit">
-            <input type="text" name="inputText">
-            <input type="submit" id="submitButton">
-        </form>
+        <h4>Messages</h4>
+        <div id="messages">
+
+        </div>
+
     </div>
-
-    <h4>Messages</h4>
-    <div id="messages">
-
-    </div>
-
 </body>
 </html>
