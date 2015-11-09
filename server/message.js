@@ -58,4 +58,21 @@ app.get('/refresh', function(req,res){
     });
 });
 
+app.delete('/delete', function(req,res){
+
+    var deleteId = req.body.id;
+
+    pg.connect(connectionString, function (err, client) {
+        client.query("DELETE * FROM messages WHERE id = $1", [deleteId],
+            function (err, result) {
+                if (err) {
+                    console.log("Error inserting data: ", err);
+                    res.send(false);
+                }
+                res.send(true);
+            }
+        )
+    });
+});
+
 module.exports = app;

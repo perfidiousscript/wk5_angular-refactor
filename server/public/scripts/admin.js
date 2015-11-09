@@ -6,12 +6,18 @@ var message = {};
 var display = [];
 
 $(document).ready(function(){
-    console.log("Admin script checking in");
+    //Populates page with messages from db on load.
+    refreshMessages();
+
+    //Submission click functionality
     $('#messageSubmit').submit(function(event) {
             event.preventDefault();
             postMessage($(this))
         }
     );
+
+    //Functionality for delete button
+    $('#messages').on('click','.deleteBtn', deleteMessage);
 });
 
 
@@ -48,5 +54,13 @@ function refreshMessages(){
 
 
 function deleteMessage(){
-
+    console.log("This is the target: ", $(this));
+    $.ajax({
+        type:"DELETE",
+        url:'/delete',
+        data: $(this).data('id'),
+        success: function(){
+            refreshMessages();
+        }
+    })
 }
