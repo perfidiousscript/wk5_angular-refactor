@@ -7,6 +7,8 @@ var display = [];
 
 $(document).ready(function(){
 
+    refreshMessages();
+
     $('#messageSubmit').submit(function(event) {
             event.preventDefault();
             postMessage($(this))
