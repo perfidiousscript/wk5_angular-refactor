@@ -33,7 +33,7 @@ app.post('/post', function(req,res){
     });
 });
 
-//This GET call quesrys all messages in the database and sends them back down to the client.
+//This GET call querys all messages in the database and sends them back down to the client.
 app.get('/refresh', function(req,res){
 
     pg.connect(connectionString, function (err, client, done) {
