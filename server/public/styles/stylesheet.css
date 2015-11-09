@@ -15,7 +15,7 @@
 .deleteBtn{
     border: 3px solid white;
     border-radius: 3px;
-    width: 50px
+    width: 63px
 }
 
 h4 {
@@ -23,7 +23,8 @@ h4 {
     text-align: center;
 }
 
-.messages{
-    border: 5px solid grey;
-    margin: 15px;
+.message{
+    border: 3px solid grey;
+    padding: 7px;
+    margin: 50px;
 }
