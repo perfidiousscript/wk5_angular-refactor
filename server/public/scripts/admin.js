@@ -54,7 +54,7 @@ function refreshMessages(){
 
 
 function deleteMessage(){
-    console.log("This is the target: ", $(this));
+    console.log("This is the target id: ", $(this).data('id'));
     $.ajax({
         type:"DELETE",
         url:'message/delete',
