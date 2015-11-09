@@ -46,7 +46,7 @@ function refreshMessages(){
                     for(var i = 0; i < data.length; i++){
                         $('#messages').prepend("<div class='message'><p>USER NAME: " + data[i].user_name + "</p>" +
                             "<p>MESSAGE: " + data[i].message + "</p>" +
-                        "<div class='deleteBtn data-id="+ data[i].id + ">DELETE</div></div");
+                        "<div class='deleteBtn data-id=" + data[i].id + ">DELETE</div></div>");
                     }
                 }
         })
