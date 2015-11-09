@@ -17,7 +17,9 @@ $(document).ready(function(){
     );
 
     //Functionality for delete button
-    $('#messages').on('click','.deleteBtn', deleteMessage);
+    $('#messages').on('click','.deleteBtn', function(){
+        deleteMessage($(this).data('id'));
+    });
 });
 
 
@@ -53,13 +55,15 @@ function refreshMessages(){
 }
 
 
-function deleteMessage(){
-    var $thisId = $(this).data('id');
-    console.log("This is the target id: ", $(this).data('id'));
+function deleteMessage(target){
+    var dataObject = {
+        dataID : target,
+    };
+
     $.ajax({
         type:"DELETE",
         url:'/message/delete',
-        data: $thisId,
+        data: dataObject,
         success: function(){
             refreshMessages();
         }

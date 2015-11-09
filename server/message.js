@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 //Sets up pg and connects to the PGSQL database
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://ec2-54-83-0-61.compute-1.amazonaws.com/d3enktn9kkarls';
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/thunder_chat';
 
 app.use(bodyParser.urlencoded({expanded: true}));
 
@@ -60,10 +60,9 @@ app.get('/refresh', function(req,res){
 
 app.delete('/delete', function(req,res){
 
-    var deleteId = req.body;
-
+    console.log("Here is req.body: ", req);
     pg.connect(connectionString, function (err, client) {
-        client.query("DELETE * FROM messages WHERE id = ($1)", [deleteId],
+        client.query("DELETE FROM messages WHERE id = ($1)", [req.body.dataID],
             function (err, result) {
                 if (err) {
                     console.log("Error inserting data: ", err);
