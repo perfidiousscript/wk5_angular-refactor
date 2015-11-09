@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="messageApp">
 <head>
     <meta charset="UTF-8">
     <title>Thunder Chat</title>
     <link rel="stylesheet" href="../styles/stylesheet.css">
-    <script type="text/javascript" src="/vendors/jquery.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
 
 <body>
-    <div id="body-container">
+    <div id="body-container" ng-controller="BodyController">
         <h4>Thunder Chats</h4>
         <div id="inputForm">
             <form id="messageSubmit">
-                <input type="text" name="inputText">
-                <input type="submit" id="submitButton">
+                <input ng-model="message.text" type="text" name="inputText">
             </form>
+            <button ng-click="clickButton(message)" class='btn'>SUBMIT</button>
         </div>
 
         <h5>Messages</h5>
