@@ -12,14 +12,13 @@
     <div id="body-container" ng-controller="BodyController">
         <h4>Thunder Chats</h4>
         <div id="inputForm">
-            <form id="messageSubmit">
-                <input ng-model="message.text" type="text" name="inputText">
-            </form>
+            <input ng-model="message.inputText" type="text">
             <button ng-click="clickButton(message)" class='btn'>SUBMIT</button>
         </div>
 
         <h5>Messages</h5>
-        <div id="messages">
+        <div id="messages" ng-repeat="messages in logArray">
+            <p>{{messages.message}}</p>
 
         </div>
 

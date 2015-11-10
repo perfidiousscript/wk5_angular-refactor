@@ -2,20 +2,27 @@
  * Created by samuelmoss on 11/8/15.
  */
 
-var message = {};
-var display = [];
-
 var messageApp = angular.module('messageApp', []);
 
 
-messageApp.controller("BodyController",['$scope','$http', function($scope,$http){
+messageApp.controller("BodyController",['$scope','$http', function($scope, $http){
     $scope.message = {};
+    $scope.logArray = [];
 
     $scope.clickButton = function(input){
+        console.log(input);
         $http.post('/message/post', input).then(function(response){
-            console.log("This works!");
+            $scope.logMessages();
+        })
+    };
+
+    $scope.logMessages = function(){
+        $http.get('/message/refresh').then(function(response){
+            $scope.logArray = response.data;
         })
     }
+
+    $scope.logMessages();
 
 }]);
 

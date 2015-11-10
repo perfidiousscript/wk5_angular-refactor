@@ -10,9 +10,12 @@ var bodyParser = require('body-parser');
 var pg = require('pg');
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/thunder_chat';
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({expanded: true}));
 
 app.post('/post', function(req,res){
+
+    console.log("body: ", req.body);
 
     //creates an object to insert into PGSQL
     var newMessage = {
